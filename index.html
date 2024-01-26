@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h2>Arithmetic</h2>
+        <form id="add">
+            <label>Number 1:</label>
+            <input type="number" id="num1" name="num1" required>
+
+            <label>+ Number 2:</label>
+            <input type="number" id="num2" name="num2" required>
+
+            <button type="button" onclick="add()">=</button>
+            <label id="result"></label>
+        </form>
+    </section>
+    <script>
+        // function addNum(){
+        //     var num1 = parseInt(document.getElementById('num1').value);
+        //     var num2 = parseInt(document.getElementById('num2').value);
+        //     var sum = num1 + num2;
+        //     document.getElementById('result').innerText = sum;
+        // }
+    async function add() {
+    const operandlInput = document.getElementById ("num1" ) ;
+    const operand2Input = document.getElementById ("num2") ;
+    let n = operandlInput.value;
+    let m = operand2Input.value;
+    const response = await fetch("http://localhost:3000/add/" + n + "/" + m);
+    const sum = await response.json();
+    document.getElementById ("result").innerText = sum.result;
+    }
+    </script>
+</body>
+</html>
