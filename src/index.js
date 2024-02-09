@@ -11,6 +11,29 @@ app.get('/add/:number1/:number2', (req, res) => {
     res.json({ result: sum });
 });
 
+app.get('/calculate/:num1/:num2/:operator', (req, res) => {
+    const number1 = parseFloat(req.params.num1);
+    const number2 = parseFloat(req.params.num2);
+    const result=0;
+    switch(operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+        default:
+            result = "Invalid operator";
+    }
+    res.json({ result: sum });
+});
+
 app.get('/',(req,res)=>{
     res.send('Arithmetic service-Hello World!');
 });
