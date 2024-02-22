@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
 
             <button type="button" onclick="add()">=</button>
             <label id="result"></label> -->
-            <h1>Mini Calculator</h1>
+            <!-- <h1>Mini Calculator</h1>
     <input type="text" id="num1" placeholder="Enter number 1">
     <select id="operator">
         <option value="+">+</option>
@@ -30,8 +30,8 @@
     <p>Result: <span id="result"></span></p>
         </form>
     </section>
-    <script>
-        // function addNum(){
+    <script> -->
+        <!-- // function addNum(){
         //     var num1 = parseInt(document.getElementById('num1').value);
         //     var num2 = parseInt(document.getElementById('num2').value);
         //     var sum = num1 + num2;
@@ -45,8 +45,8 @@
     // const response = await fetch("http://localhost:3000/add/" + n + "/" + m);
     // const sum = await response.json();
     // document.getElementById ("result").innerText = sum.result;
-    // }
-    async function add() {
+    // } -->
+    <!-- async function add() {
     const operandlInput = document.getElementById ("num1" ) ;
     const operand2Input = document.getElementById ("num2") ;
     let n = operandlInput.value;
@@ -63,10 +63,78 @@
     let n = operandlInput.value;
     let m = operand2Input.value;
     let o = operator1;
-    const response = await fetch("https://arithmetic-service-yashaswinisampath.onrender.com/calculate/" + n + "/" + m + "/" + o);
+    const response = await fetch("https://arithmetic-service-yashaswinisampath.onrender.com//calculate/" + n + "/" + m + "/" + o);
     const sum = await response.json();
     document.getElementById ("result").innerText = sum.result;
-    }
+    } -->
+    <!-- </script>
+</body>
+</html> --> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .column {
+           float: left;
+           width: 50%;
+           padding: 10px;
+           box-sizing: border-box;
+          
+        }
+        .row::after {
+           content: "";
+           clear: both;
+           display: table;
+        }
+     </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column">          
+           <section>
+            <h2>Arithmetic</h2>
+            <input id="operand1"/> 
+            <label>+</label>
+            <input id="operand2"/>
+            <button onclick="add()">=</button>
+            <label id="sum"></label>  
+        </section>
+        </div>
+        <div class="column">
+            <section>
+                <h2>Prime check</h2>                
+                <label>Number to test:</label>
+                <input id="numberToTest"/>
+                <button onclick="isPrime()">Check</button>
+                <label id="primeCheckResult"></label>  
+            </section>           
+        </div>       
+     </div>
+    
+   
+    <script>
+        async function add() {
+            const operand1Input = document.getElementById("operand1");
+            const operand2Input = document.getElementById("operand2");
+            let n = operand1Input.value;
+            let m = operand2Input.value;
+            const response = await fetch("https://arithmetic-service.onrender.com/add/" + n + "/" + m);
+            const sum = await response.json();
+            document.getElementById("sum").innerText = sum;
+        }
+
+        async function isPrime() {
+            const numberToTest = document.getElementById("numberToTest");            
+            let n = numberToTest.value;            
+            const response = await fetch("???" + n);
+            const result = await response.json();
+            document.getElementById("primeCheckResult").innerText = result;
+        }
     </script>
 </body>
 </html>
