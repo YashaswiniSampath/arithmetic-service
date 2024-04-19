@@ -20,7 +20,7 @@ spec:
     spec:
       containers: 
       - name: arithmetic-service
-        image: arithmetic-service:latest
+        image: $CONTAINER_REGISTRY/arithmetic-service:$VERSION
         imagePullPolicy: Never
         env:
         - name: PORT
